@@ -26,3 +26,18 @@ a. docker container run tomcat: O comando docker run vai criar um container com 
 b. docker container ls: esse comando faz a listagem dos containers.<br><br>
 c. docker image ls: esse comando faz a listagem das imagens.
 
+* **Dificuldades enfrentadas e como está o projeto:**<br><br>
+R: Nunca tinha utilizado um framework em java, e percebi que o Spring facilita muito a vida de um Programador java, 
+fiz uma aplicação com um bacno de dados que ja vem no pacote java, banco de daods local chamado H2, para fazer a sua
+conexão utilizamos o arquivo `application.properties`
+<br><br>`spring.datasource.url=jdbc:h2:mem:testdb`<br>
+`spring.datasource.username=sa`<br>
+`spring.datasource.password= `<br><br>
+R: Assim como ele ja é pré-configurado no mesmo arquivo.
+para acessar o banco com a aplicação rodando você pode colocar a url `localhost:8080/h2-console` e então colocar a url e user acima!
+No arquivo `import.sql`, temos exemplos da aplicação em sql que assim que for restartado a aplicação ela irá executar e colocar no banco.<br><br>
+`Atividade-Roteiro-1---DAC/src/main/java/com/kaueDAC/UserDept/controllers/UserController.java`<br>
+R: Neste arquivo temos o controller que pode ser utilizado no Postman e Insomnia para inserir, buscar e buscar pelo o id um usuário
+com as url `localhost:8080/users` `localhost:8080/users/id` e `localhost:8080/users` com método POST.<br><br>
+R:Os modelos de departamento e de Usuários está no arquivo entities.
+na web para demonstrar o usuários inseridos basta a url `localhost:8080/users`.
