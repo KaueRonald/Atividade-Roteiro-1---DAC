@@ -14,13 +14,16 @@ import com.kaueDAC.UserDept.entities.User;
 import com.kaueDAC.UserDept.repositories.UserRepository;
 
 @RestController
-@RequestMapping(value = "/users")
+@RequestMapping
 public class UserController {
 
 	@Autowired
 	private UserRepository repository;
 	
-	@GetMapping
+	@GetMapping("/")
+	public String home() { return "Bem vindo, acesse a rota '/users' para ver os usuários";}
+	
+	@GetMapping("/users")
 	public List<User> findAll(){
 		List<User> result = repository.findAll();
 		return result;
